@@ -1,0 +1,29 @@
+/* Create table about the people and what they do here */
+CREATE TABLE famous_people (id INTEGER PRIMARY KEY, name TEXT, career TEXT, age INTEGER, gender TEXT);
+INSERT INTO famous_people VALUES(1,"Selena Gomez", "singer, actress",30, "Female");
+INSERT INTO famous_people VALUES(2,"Taylor Swift","singer",33,"Female");
+INSERT INTO famous_people VALUES(3, "Kylie Jenner","reality",25,"Female");
+INSERT INTO famous_people VALUES(4,"The Weeknd","singer", 33, "Male");
+INSERT INTO famous_people VALUES(5,"Justin Bieber", "singer",29,"Male");
+INSERT INTO famous_people VALUES(6,"Hailey Bieber","reality",26,"Female");
+INSERT INTO famous_people VALUES(7,"Tom Brady", "athlete",45,"Male");
+INSERT INTO famous_people VALUES(8,"Steph Curry","athlete",35, "Male");
+INSERT INTO famous_people VALUES(9,"Shakira","singer",46,"female");
+INSERT INTO famous_people VALUES(10,"Kevin Hart","comedian",43,"male");
+
+
+
+
+
+CREATE Table careers (id INTEGER, career TEXT);
+
+INSERT INTO careers VALUES(1,"actress");
+INSERT INTO careers VALUES(2,"singer");
+INSERT INTO careers VALUES(3,"reality");
+INSERT INTO careers VALUES(4,"athlete");
+INSERT INTO careers VALUES(5,"comedian");
+
+SELECT famous_people.name, famous_people.career ,famous_people.age
+FROM famous_people
+LEFT OUTER JOIN careers
+ON famous_people.career=careers.career
